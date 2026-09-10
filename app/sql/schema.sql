@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS staff (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    nama_lengkap VARCHAR(100) NOT NULL,
+    role VARCHAR(20) NOT NULL DEFAULT 'staff'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS tickets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    subjek VARCHAR(200) NOT NULL,
+    deskripsi TEXT NOT NULL,
+    lampiran_path VARCHAR(255) DEFAULT NULL,
+    status ENUM('baru','diproses','selesai') NOT NULL DEFAULT 'baru',
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
