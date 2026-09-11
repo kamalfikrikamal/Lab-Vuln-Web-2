@@ -32,6 +32,11 @@ ini port aplikasi (`8083`) memang dipublikasikan eksplisit oleh Docker Compose k
 fokus lab ini bukan pada recon jaringan, melainkan pada kualitas validasi input di level
 aplikasi dan pada privesc berbasis Linux capabilities di level OS.
 
+Lab ini juga tersedia sebagai OVA (VirtualBox) untuk skenario distribusi yang butuh IP
+sendiri tanpa peserta perlu install Docker - lihat `docs/OVA_BUILD.md`. Stack di dalam
+OVA tetap Docker Compose yang sama persis (dijalankan otomatis di dalam VM), jadi seluruh
+arsitektur dan kerentanan di atas tidak berubah.
+
 ## Alur Temuan
 
 Lihat `VULNERABILITIES.md` untuk detail & PoC. Berbeda dari Lab 1, di lab ini **tidak

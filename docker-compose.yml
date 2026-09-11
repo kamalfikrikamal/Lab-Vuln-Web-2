@@ -1,6 +1,7 @@
 services:
   db:
     image: mysql:8.0
+    restart: unless-stopped
     environment:
       MYSQL_DATABASE: teknobantu
       MYSQL_USER: teknobantu_app
@@ -16,6 +17,7 @@ services:
     build:
       context: .
       dockerfile: docker/web/Dockerfile
+    restart: unless-stopped
     depends_on:
       - db
     environment:

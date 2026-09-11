@@ -30,6 +30,7 @@ COPY docker/web/000-teknobantu.conf /etc/apache2/sites-available/000-teknobantu.
 
 RUN a2dissite 000-default \
     && a2ensite 000-teknobantu \
+    && rm -f /var/www/html/index.html \
     && mkdir -p /var/www/html/uploads/tickets \
     && chown -R www-data:www-data /var/www/html/uploads
 

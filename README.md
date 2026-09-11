@@ -1,15 +1,37 @@
 # Lab Web 2 - TeknoBantu
 
-Lab web pentest kedua: portal helpdesk IT internal fiktif "TeknoBantu". Berbeda dari
-Lab Web 1 (OVA VirtualBox), lab ini didistribusikan sebagai **Docker Compose**.
+Lab web pentest kedua: portal helpdesk IT internal fiktif "TeknoBantu". Lab ini
+didistribusikan sebagai **Docker Compose** (jalankan langsung di laptop peserta), dan
+juga tersedia sebagai **OVA (VirtualBox)** untuk skenario yang butuh VM mandiri dengan
+IP sendiri tanpa peserta perlu install Docker.
 
-## Menjalankan Lab
+## Menjalankan Lab (Docker Compose)
 
 ```bash
 docker compose up --build
 ```
 
 Aplikasi tersedia di `http://localhost:8083`.
+
+## Menjalankan Lab (OVA / VirtualBox)
+
+1. Buka VirtualBox > **File > Import Appliance**, pilih file `teknobantu.ova` yang
+   diterima dari instruktur.
+2. Saat proses import, VirtualBox akan meminta memilih interface jaringan fisik untuk
+   adapter kedua (bridged) - pilih interface yang terhubung ke jaringan yang sama dengan
+   laptop Anda.
+3. Nyalakan VM. Begitu boot selesai, layar console VM (**tanpa perlu login**) akan
+   menampilkan IP dan URL lab, contoh:
+   ```
+   === TeknoBantu Lab ===
+   Lab URL: http://192.168.1.50:8083
+   =======================
+   ```
+4. Buka URL tersebut di browser pada laptop Anda.
+
+Jika adapter jaringan VM menampilkan "Not attached" setelah import, buka VM Settings >
+Network > Adapter 2 dan pilih ulang jenis adapter (bridged) secara manual, lalu nyalakan
+ulang VM. Panduan build OVA untuk maintainer ada di `docs/OVA_BUILD.md`.
 
 ## Akun Demo Staff
 
